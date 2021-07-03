@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+
+</style>
+<script>
+
+const doSomething=()=>{
+var promise=new Promise((resolve)=>{
+setTimeout(()=>{
+resolve("God is great");
+//the function whose address is passed to then function
+//will get called because of abcd()
+},10000);
+});
+return promise;
+}
+
+//button one mai jab tk promise vali statement chalegi aage ka kaam ni rukega  
+const oneClicked=()=>{
+//line one of oneClicked
+doSomething().then((slogan)=>{
+console.log(slogan);
+});
+console.log("Ujjain is the city of gods");
+}
+
+//button two mai jab tk promise vali statement complete ni hojati kaam ruka rahega
+const twoClicked= async()=>{
+await doSomething().then((slogan)=>{
+console.log(slogan);
+});
+console.log("I live in Ujjain");
+}
+
+const timePass=(ms)=>{
+return new Promise((resolve)=>{
+setTimeout(resolve,ms);
+});
+}
+
+const threeClicked=async()=>{
+console.log("Cool");
+await timePass(5000);
+console.log("Too Cool");
+}
+
+</script>
+</head>
+<body>
+ <h1>Example -83</h1><br/><br/>
+<button type='button' onClick='oneClicked()'>Button 1</button><br/><br/>
+<button type='button' onClick='twoClicked()'>Button 2</button><br/><br/>
+<button type='button' onClick='threeClicked()'>Button 3</button><br/><br/>
+<br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>
+
+
+
+

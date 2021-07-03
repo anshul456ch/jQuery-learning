@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+.cool
+{
+color:#FF43BB;
+}
+</style>
+<script>
+//addClass : Adds the specified class(es) to each element in the set of matched elements.
+function classAdder()
+{
+// here .tmclass selects all elements with the given class
+//Selects all elements with the cool tag name
+$(".tmclass").addClass("cool");
+}
+//removeClass : Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+function classRemover()
+{
+// here .tmclass selects all elements with the given class
+//Selects all elements with the cool tag name
+$(".tmclass").removeClass("cool");
+}
+
+</script>
+</head>
+<body>
+<h1>Example 3</h1>
+<div class='tmclass'>Thinking Machines - Ujjain</div><br/>
+<div class='tmclass'>We teach more than we promise</div><br/>
+<div class='tmclass'>Think Big</div><br/>
+<button type='button' onclick='classAdder()'>Apply Style</button><br/><br/>
+<button type='button' onclick='classRemover()'>Remove Style</button><br/><br/><br/>
+<a href='/'>HOME</a><br/>
+</body>
+</html>

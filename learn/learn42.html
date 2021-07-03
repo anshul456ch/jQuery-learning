@@ -1,0 +1,46 @@
+<!__Bubbling__>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+
+</style>
+<script>
+$(()=>{
+$("#s1").click((ev)=>{
+alert('s1 clicked');
+alert("Target :"+$(ev.target).html());
+alert("Current target :"+$(ev.currentTarget).html());
+});
+$("#s2").click((ev)=>{
+alert('s2 clicked');
+});
+$("#s3").click((ev)=>{
+alert('s3 clicked');
+});
+$("#s4").click((ev)=>{
+alert('s4 clicked');
+});
+$("#s5").click((ev)=>{
+alert('s5 clicked');
+});
+});
+</script>
+</head>
+<body>
+<h1>Example 42</h1>
+<div id='s1'>
+<h1 id='s2'>Thinking Machines</h1>
+<span id='s3'>
+<h3 id='s4'>We teach more than we promise to teach</h3>
+<h3 id='s5'>Think Big</h3>
+</span>
+</div>
+<br/>
+<br/>
+<a href='/'>HOME</a>
+</body>
+</html>

@@ -1,0 +1,148 @@
+.tmjrock_modalMask
+{
+width:100%;
+height:100%;
+top:0;
+left:0;
+border:1px solid red;
+background:gray;
+position:fixed;
+opacity:70%;
+}
+.tmjrock_modal
+{
+width:400px;
+min-width:400px;
+height:300px;
+min-height:300px;
+background-color:blue;
+position:fixed;
+top:0;
+left:0;
+bottom:0;
+right:0;
+margin:auto;
+border:1px solid white;
+  box-shadow: 5px 10px grey;
+}
+.tmjrock_closeButton
+{
+float:right;
+padding:2px 7px 7px;
+cursor:pointer;
+margin-right:5px;
+margin-top:-9px;
+font-size:25pt;
+color:red;
+font-family:"Helvetica";
+}
+
+
+.tmjrock_tmgrid_header_division
+{
+overflow-x:hidden;
+overflow-y:hidden;
+width:350px;
+}
+.tmjrock_tmgrid_body_division
+{
+overflow-x:scroll;
+overflow-y:scroll;
+width:350px;
+height:400px;
+}
+.tmjrock_tmgrid_head
+{
+border:1px groove black;
+border-bottom:0px;
+border-spacing:0px;
+border-collapse:collapse;
+background:#2AB628;
+width:750px;
+font-weight:bold;
+}
+.tmjrock_tmgrid_head td
+{
+border-left:1px groove black;
+border-right:1px groove black;
+border-top:1px groove black;
+border-bottom:0px;
+width:50px;
+text-align:right;
+color:#FFF;
+padding-top:5px;
+padding-bottom:5px;
+}
+.tmjrock_tmgrid_head td+td
+{
+width:100px;
+text-align:left;
+}
+.tmjrock_tmgrid_head td+td+td
+{
+width:200px;
+text-align:left;
+}
+.tmjrock_tmgrid_head td+td+td+td
+{
+width:200px;
+text-align:left;
+}
+.tmjrock_tmgrid_head td+td+td+td+td
+{
+width:200px;
+text-align:left;
+}
+
+.tmjrock_tmgrid_body
+{
+border:1px groove black;
+border-spacing:0px;
+border-collapse:collapse;
+width:750px;
+}
+.tmjrock_tmgrid_body td
+{
+border:1px groove black;
+width:50px;
+text-align:right;
+padding-top:6px;
+padding-bottom:6px;
+
+}
+.tmjrock_tmgrid_body td+td
+{
+width:100px;
+text-align:left;
+}
+.tmjrock_tmgrid_body td+td+td
+{
+width:200px;
+text-align:left;
+}
+.tmjrock_tmgrid_body td+td+td+td
+{
+width:200px;
+text-align:left;
+}
+.tmjrock_tmgrid_body td+td+td+td+td
+{
+width:200px;
+text-align:left;
+}
+.tmjrock_tmgrid_pagination td
+{
+width:20px;
+text-align:center;
+}
+.tmjrock_tmgrid_pagination_division
+{
+margin-top:20px;
+}
+.tmjrock_tmgrid_pagination_division a {
+ background-color:#2AB628;
+ color:white;
+ padding:10px 18px;
+ text-decoration:none; 
+ text-transform:uppercase;
+}

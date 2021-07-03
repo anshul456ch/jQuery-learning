@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+.xyz{
+cursor:pointer;
+background-color:black;
+color:white;
+}
+</style>
+<script>
+$(()=>{
+$("h3[menuitem]").hover(function(){
+$(this).toggleClass("xyz");
+});
+
+$("h3[menuitem]").click((ev)=>{
+alert($(ev.target).text()+" is clicked");
+alert($(ev.target).attr("menuitem"));
+});
+
+});
+</script>
+</head>
+<body>
+<h1>Example 41</h1>
+<div >
+<h3 menuitem="0">Ujjain</h3>
+<h3 menuitem="1">Indore</h3>
+<h3 menuitem="2">Pune</h3>
+<h3 menuitem="3">Mumbai</h3><br/><br/><br/>
+<h3>God is great</h3>
+</div>
+<br/>
+<br/>
+<a href='/'>HOME</a>
+</body>
+</html>

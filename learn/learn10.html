@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+table{
+border : 1px solid black;
+border-collapse:collapse;
+}
+table td,th{
+border : 1px solid black;
+padding:10px;
+}
+.xyz{
+color :white;
+background-color:orange;
+}
+</style>
+<script>
+function doSomething(){
+$("#placementView").find("tbody>tr").each(function(){
+alert($(this).html());
+});
+}
+
+</script>
+</head>
+<body>
+<h1>Example 10</h1>
+<table id='placementView'>
+<thead>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Branch</th>
+<th>CGPA</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Anshul</td>
+<td>Nagar</td>
+<td>Information technology</td>
+<td>7.8</td>
+</tr>
+<tr>
+<td>Shivam</td>
+<td>Soni</td>
+<td>Computer Science</td>
+<td>9.8</td>
+</tr>
+<tr>
+<td>Jayesh</td>
+<td>Sharma</td>
+<td>Chemical</td>
+<td>5.8</td>
+</tr>
+<tr>
+<td>Swapnil </td>
+<td>Vyas</td>
+<td>BCA</td>
+<td>5.5</td>
+</tr>
+
+
+<tr>
+<td>Dev </td>
+<td>Rathore</td>
+<td>Information technology</td>
+<td>4.9</td>
+</tr>
+<tr>
+<td>Yash</td>
+<td>Soni</td>
+<td>Electrical</td>
+<td>4.8</td>
+</tr>
+<tr>
+<td>Aditya</td>
+<td>Sharma</td>
+<td>Mechanical</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>Vinay</td>
+<td>Vyas</td>
+<td>MCA</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>Harshit</td>
+<td>Dhawan</td>
+<td>Civil</td>
+<td>6.2</td>
+</tr>
+
+</tbody>
+</table>
+<br/><br/><br/>
+<center><button type='button' onclick='doSomething()'>Traverse each element of row</button></center>
+<br/><br/><br/>
+
+
+<a href='/'>HOME</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+#cos td,th{
+border:1px solid black;
+}
+#cos {
+border-collapse:collapse;
+font-size:24pt;
+cursor:pointer;
+}
+.xyz{
+background-color:black;
+color:white;
+}
+</style>
+<script>
+var selectedRow=null;
+$(()=>{
+$("#cos").click(function(ev){
+if(ev.target.tagName=="TD")
+{
+//$(this).addClass("xyz");  //whole table will look as if selected
+//$(ev.target).addClass("xyz"); //the td will look as if selected
+if(selectedRow) $(selectedRow).removeClass("xyz");
+selectedRow=ev.target.parentElement;
+$(selectedRow).addClass("xyz");
+}
+});
+});
+</script>
+</head>
+<body>
+<h1>Example 44</h1>
+<table id='cos'>
+<thead>
+<tr>
+<th>S.No</th>
+<th>Company</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>Facebook</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Amazon</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>Apple</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Netflix</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>Google</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<a href='/'>HOME</a>
+</body>
+</html>

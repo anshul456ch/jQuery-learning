@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+
+const getEmployeesByDepartment=(departmentId)=>{
+var promise=new Promise((resolve,reject)=>{
+fetch(`getEmployeesByDepartment?departmentId=${departmentId}`).then((response)=>{
+if(!response.ok)
+{
+throw Error();
+}
+return response.json();
+}).then((employees)=>{
+resolve(employees);
+}).catch((e)=>{
+reject();
+});
+});
+return promise;
+}
+
+const getDepartments=()=>{
+var promise=new Promise((resolve)=>{
+fetch("getDepartments").then((response)=>{
+return response.json();
+}).then((departments)=>{
+resolve(departments);
+});
+});
+return promise;
+}
+
+
+var dataModel={
+"departments":[]
+};
+
+const onDepartmentActivated=(ev,ui)=>{
+
+//alert(ui.newHeader.prop("id"));
+
+var departmentId=parseInt(ui.newHeader.prop("id").substring(1));
+//alert(departmentId);
+
+var e=0;
+while(e<dataModel.departments.length)
+{
+if(dataModel.departments[e].id==departmentId)
+{
+if(dataModel.departments[e].employees)
+{
+return;
+}
+break;
+}
+e++;
+}
+
+var k=ui.newPanel;
+k.empty();
+var img=$("<img src='images/progress.gif' width='5%' height='5%'/>");
+k.append(img);
+getEmployeesByDepartment(departmentId).then((employees)=>{
+
+dataModel.departments[e].employees=employees;
+
+
+var ul=$("<ul>");
+employees.forEach((employee)=>{
+var li=$(`<li>${employee.firstName} ${employee.lastName}</li>`);
+ul.append(li);
+});
+k.empty();
+k.append(ul);
+$("#departments").accordion("refresh");
+
+},()=>{
+k.empty();
+var msg=$("<h3>No Employees</h3>");
+k.append(msg);
+});
+
+}
+
+$(()=>{
+
+getDepartments().then((departments)=>{
+dataModel.departments=departments;
+//alert(dataModel.departments.length);
+var k=$("#departments");
+dataModel.departments.forEach((department)=>{
+var heading=$(`<h3 id='H${department.id}'>${department.name} (${department.id})</h3>`);
+var division=$(`<div id='D${department.id}'></div>`);
+k.append(heading);
+k.append(division);
+});
+
+$("#departments").accordion({
+activate:onDepartmentActivated,
+heightStyle:"content"
+});
+
+
+var k=$(`div[id=D${dataModel.departments[0].id}]`);
+var departmentId=dataModel.departments[0].id;
+
+k.empty();
+var img=$("<img src='images/progress.gif' width='5%' height='5%'/>");
+k.append(img);
+
+getEmployeesByDepartment(departmentId).then((employees)=>{
+dataModel.departments[0].employees=employees;
+
+var ul=$("<ul>");
+employees.forEach((employee)=>{
+var li=$(`<li>${employee.firstName} ${employee.lastName}</li>`);
+ul.append(li);
+});
+k.empty();
+k.append(ul);
+$("#departments").accordion("refresh");
+
+},()=>{
+k.empty();
+var msg=$("<h3>No Employees</h3>");
+k.append(msg);
+});
+});
+});
+
+</script>
+</head>
+<body>
+<h1>Example 97</h1>
+<h3>Departments</h3>
+<div id='departments'>
+</div>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

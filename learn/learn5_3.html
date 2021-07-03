@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+table{
+border : 1px solid black;
+border-collapse:collapse;
+}
+table td,th{
+border : 1px solid black;
+padding:10px;
+}
+
+</style>
+<script>
+
+function doSomething(){
+alert($("tbody>tr:eq(2)").html());//Select the element at index n within the matched set.(here zero based index)
+}
+</script>
+</head>
+<body>
+<h1>Example 5</h1>
+<table>
+<thead>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Branch</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Anshul</td>
+<td>Nagar</td>
+<td>Information technology</td>
+</tr>
+<tr>
+<td>Shivam</td>
+<td>Soni</td>
+<td>Computer Science</td>
+</tr>
+<tr>
+<td>Jayesh</td>
+<td>Sharma</td>
+<td>Chemical</td>
+</tr>
+<tr>
+<td>Swapnil </td>
+<td>Vyas</td>
+<td>BCA</td>
+</tr>
+</tbody>
+</table>
+<br/><br/><br/><br/><br/><br/>
+<button type='button' onclick='doSomething()'>Click me</button><br/><br/>
+<a href='learn5.html'>Learn 5</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

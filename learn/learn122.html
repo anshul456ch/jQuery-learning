@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<style>
+.error
+{
+color:red;
+}
+</style>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+
+</script>
+</head>
+<body>
+<h1>Example 122</h1>
+<h2>Form validation (Inbuilt Feature)</h2>
+<!--submitting form data with get type request is not good idea-->
+<form method='get' action='addEmployee' >
+<label for='employeeId'>Employee Id</label>
+<input type='number' id='employeeId' name='employeeId' min='1' max='99999' step='1' required><br/>
+<label for='firstName'>First name</label>
+<input type='text' id='firstName' name='firstName' required><br/>
+<label for='lastName'>Last name</label>
+<input type='text' id='lastName' name='lastName' required><br/>
+Gender
+<label for='male'>Male</label>
+<input type='radio' id='male' name='gender' value='M' checked>&nbsp;&nbsp;
+<label for='female'>Female</label>
+<input type='radio' id='female' name='gender' value='F'><br/>
+<label for='dateOfBirth'>Date of birth</label>
+<input type='date' id='dateOfBirth' name='dateOfBirth' value='2021-01-25' required><br/>
+<label for='isIndian'>Is Indian</label>
+<input type='checkbox' id='isIndian' name='isIndian' value='Y'><br/>
+<label for='basicSalary'>Basic Salary</label>
+<input type='number' id='basicSalary' name='basicSalary' min=1 max=99999999 step=1 required><br/>
+<button type='submit'>Add Employee</button>
+</form>
+<br/>
+<br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

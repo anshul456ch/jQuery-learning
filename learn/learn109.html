@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+$(()=>{
+$("#thinkingmachines").resizable();
+
+$("#tm").resizable({
+animate:true,
+helper:"helper-border"
+});
+
+$("#an").resizable({
+maxWidth:500,
+maxHeight:600,
+minWeight:200,
+minHeight:200
+});
+
+
+$("#abc").resizable({
+aspectRatio:16/9
+});
+
+
+$("#xyz").resizable({
+ghost:true
+});
+
+});
+</script>
+<style>
+.helper-border
+{
+border:1px dotted red;
+}
+#thinkingmachines
+{
+width:400px;
+height:300px;
+}
+#tm
+{
+width:400px;
+height:300px;
+}
+#an
+{
+width:400px;
+height:300px;
+}
+#abc
+{
+width:400px;
+height:300px;
+}
+#xyz
+{
+width:400px;
+height:300px;
+}
+</style>
+</head>
+<body>
+<h1>Example 109</h1><br/><br/>
+<h5>Simple</h5>
+<div id='thinkingmachines' class='ui-widget-content'>
+<h1 class='ui-widget-header'>Thinking Machines</h1>
+<h3>Think Big</h3>
+</div>
+<br/><br/><br/>
+<h5>Animation</h5>
+<div id='tm' class='ui-widget-content'>
+<h1 class='ui-widget-header'>Thinking Machines</h1>
+<h3>Think Big</h3>
+</div>
+<br/><br/><br/>
+<h5>Height/Width</h5>
+<div id='an' class='ui-widget-content'>
+<h1 class='ui-widget-header'>Thinking Machines</h1>
+<h3>Think Big</h3>
+</div>
+<br/><br/><br/>
+<h5>Aspect Ratio</h5>
+<div id='abc' class='ui-widget-content'>
+<h1 class='ui-widget-header'>Thinking Machines</h1>
+<h3>Think Big</h3>
+</div>
+<br/><br/><br/>
+<h5>Ghost property</h5>
+<div id='xyz' class='ui-widget-content'>
+<h1 class='ui-widget-header'>Thinking Machines</h1>
+<h3>Think Big</h3>
+</div>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

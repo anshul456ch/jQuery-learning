@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>TMJROCK</title>
+<script src='js/framework.js'></script>
+<link rel="stylesheet" href="css/framework_style.css">
+<script>
+// user written functions
+function abBeforeOpening()
+{
+return true;
+}
+function abOpened()
+{
+}
+function abBeforeClosing()
+{
+return true;
+}
+function abClosed()
+{
+}
+
+function createModal1()
+{
+$$$.modals.show("ab");
+}
+</script>
+</head>
+<body>
+<h1>Modal example</h1>
+<button style='background:#0047b3;border:none;border-radius:2px;padding:10px;font-size:18px;color:#FFF' onclick='createModal1()'>Show modal</button>
+<div id='ab' style='display:none' forModal='TruE' size="600x300" header="Some Heading" footer="Some Footer" maskColor="#41EAD4" modalBackgroundColor="#EEF1EF	" closeButton="true" beforeOpening="abBeforeOpening()" afterOpening="abOpened()" beforeClosing="abBeforeClosing()" afterClosing="abClosed()">
+<center><b>Modal</b></center>
+<h5>In user interface design for computer applications, a modal window is a graphical control element subordinate to an application's main window. A modal window creates a mode that disables the main window but keeps it visible, with the modal window as a child window in front of it.</h5>
+<h1><b>How it works</b></h1>
+<h5>
+Before getting started with Bootstrap’s modal component, be sure to read the following as our menu options have recently changed.<br/>
+<ul>
+<li>Modals are built with HTML, CSS, and JavaScript. They’re positioned over everything else in the document and remove scroll from the <body> so that modal content scrolls instead.</li>
+<li>Clicking on the modal “backdrop” will automatically close the modal.</li>
+<li>Bootstrap only supports one modal window at a time. Nested modals aren’t supported as we believe them to be poor user experiences.</li>
+<li>Modals use position: fixed, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a .modal within another fixed element.</li>
+<li>Once again, due to position: fixed, there are some caveats with using modals on mobile devices. See our browser support docs for details.</li>
+<li>Due to how HTML5 defines its semantics, the autofocus HTML attribute has no effect in Bootstrap modals.</li>
+</ul>
+</h5>
+</div>
+</body>
+</html>

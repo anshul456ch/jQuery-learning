@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+const doSomething=()=>{
+var x=2;
+try
+{
+if(x<50) throw Error(`Unable to process ${x} less than 50`);
+if(x>500) throw "Number 500 cannot be processed"
+if(x%2==0)  throw x;
+alert(x*x);
+}catch(e)
+{
+//alert(typeof(e));
+if(e instanceof Error)
+{
+alert(`Cannot process ${x} as it is less than 50`);
+}
+if(typeof(e)=="number")
+{
+alert(`Number ${x} cannot be processed as it is even number`);
+}
+if(typeof(e)=="string")
+{
+alert(`Number ${x} cannot be processed as it is greater then 500`);
+}
+}
+}
+</script>
+</head>
+<body>
+<h1>Example 99</h1>
+<button type='button' onClick='doSomething()'>Button 1</button>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

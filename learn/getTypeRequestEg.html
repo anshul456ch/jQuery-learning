@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS-Framework Example</title>
+<script src='js/framework.js'></script>
+<script>
+function getDesignation()
+{
+let titleSpan=$$$("title");
+titleSpan.html("");
+let code=$$$("code").value();
+$$$.ajax({
+"url":"servletTwo",
+"data":{
+"code":code
+},
+"methodType":"GET",
+"success":function(responseData){
+if(responseData=="INVALID")
+{
+alert("Invalid designation code");
+}
+else
+{
+var splits=responseData.split(",");
+titleSpan.html(splits[1]);
+}
+},
+"failure":function(){
+alert("some problem");
+}
+});
+}
+
+</script>
+</head>
+<body>
+<h1>GET Type request with data Example</h1>
+Enter code <input type='text' id='code'>
+<button type='button' onclick='getDesignation()'>Get Designation</button><br>
+<br>
+Title <span id='title'></span>
+<br>
+<a href='index.html'>Home</a>
+</body>
+</html>

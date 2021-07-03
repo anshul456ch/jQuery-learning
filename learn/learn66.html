@@ -1,0 +1,48 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<style>
+.xyz
+{
+color: red;
+}
+.pqr
+{
+color:orange;
+font-size:14pt;
+}
+
+</style>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script>
+const oneClicked=()=>{
+alert($(".xyz").css("color"));
+$(".xyz").css("color","blue");
+}
+
+function twoClicked()
+{
+//alert($(".pqr").css("fontSize")); //use camel case instead of - prop value separated by - (fontSize)
+var ff=$(".pqr").css("fontSize");
+alert(ff);
+ff=parseFloat(ff);
+alert(ff);
+var k=`${ff*2}px`;
+alert(k);
+$(".pqr").css("fontSize",k);
+}
+
+</script>
+</head>
+<body>
+<h1 class='xyz'>Example 66</h1>
+<div class='pqr'>Ujjain is the city of Gods</div><br/><br/>
+<button type='button' onclick='oneClicked()'>Button 1</button>
+<button type='button' onclick='twoClicked()'>Button 2</button>
+<br/>
+<br/>
+<a href='/'>HOME</a>
+</body>
+</html>

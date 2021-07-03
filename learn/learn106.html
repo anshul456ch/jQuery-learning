@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+const updateNoticeBoard=()=>{
+
+var red=$(".redSlider").slider("value");
+var green=$(".greenSlider").slider("value");
+var blue=$(".blueSlider").slider("value");
+
+var redHex=red.toString(16);
+var greenHex=green.toString(16);
+var blueHex=blue.toString(16);
+
+var colorCode="#"+redHex+greenHex+blueHex;
+
+var message=`Selected Color : RGB(${red},${green},${blue})&nbsp;&nbsp;&nbsp; Hex Color Code : ${colorCode} `;
+
+$(".noticeBoard").html(message);
+
+$(".rightPanel").css("background-color",colorCode);
+
+}
+
+$(()=>{
+
+$(".redSlider,.greenSlider,.blueSlider").slider({
+min:0,
+max:255,
+value:0,
+slide:updateNoticeBoard,
+change:updateNoticeBoard
+});
+updateNoticeBoard();
+});
+</script>
+
+<style>
+
+.colorPicker{
+border:1px solid orange;
+display:flex;
+width:90%;
+padding:25px
+}
+
+.redSlider
+{
+margin:20px;
+background-color:red;
+}
+
+.greenSlider
+{
+margin:20px;
+background-color:green;
+}
+
+.blueSlider
+{
+margin:20px;
+background-color:blue;
+}
+
+.leftPanel
+{
+width:75%;
+}
+
+.rightPanel
+{
+width:20%;
+border:2px solid gray;
+padding:20px;
+border-radius:20px;
+}
+
+.noticeBoard
+{
+width:90%;
+border:1px solid black;
+padding:25px;
+margin-top:10px;
+font-size:20pt;
+color:red;
+}
+</style>
+
+</head>
+<body>
+<h1>Example 106</h1><br/><br/>
+<center><h3>Color Picker</h3>
+</center>
+
+<div class='colorPicker'>
+<div class='leftPanel'>
+<div class='redSlider'></div>
+<div class='greenSlider'></div>
+<div class='blueSlider'></div>
+</div>
+<div class='rightPanel'></div>
+</div>
+<div class='noticeBoard'></div>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

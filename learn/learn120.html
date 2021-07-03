@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<link rel='stylesheet' href='fontawesome-5.15.3/css/all.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+function validateForm(frm)
+{
+var employeeId=frm.employeeId.value.trim();
+var firstName=frm.firstName.value.trim();
+var lastName=frm.lastName.value.trim();
+var dateOfBirth=frm.dateOfBirth.value.trim();
+var basicSalary=frm.basicSalary.value.trim();
+
+if(employeeId.length==0)
+{
+alert('Employee Id required');
+return false;
+}
+if(firstName.length==0)
+{
+alert('First Name required');
+return false;
+}
+if(lastName.length==0)
+{
+alert('Last Name required');
+return false;
+}
+if(dateOfBirth.length==0)
+{
+alert('Date Of Birth required');
+return false;
+}
+if(basicSalary.length==0)
+{
+alert('Basic Salary required');
+return false;
+}
+
+//employee id validation
+var digits="0123456789";
+var e=0;
+while(e<employeeId.length)
+{
+if(digits.indexOf(employeeId.charAt(e))==-1)
+{
+alert("Employee id should be an integer value");
+return false;
+}
+e++;
+}
+
+//first name , last name length validation
+if(firstName.length>25)
+{
+alert("First Name cannot exceed 25 characters");
+return false;
+}
+if(lastName.length>25)
+{
+alert("Last Name cannot exceed 25 characters");
+return false;
+}
+
+
+//date of birth validation
+if(dateOfBirth.length<8 || dateOfBirth.length>10)
+{
+alert("Invalid date of birth");
+return false;
+}
+var validSet='0123456789/';     
+e=0;
+while(e<dateOfBirth.length)
+{
+if(validSet.indexOf(dateOfBirth.charAt(e))==-1)
+{
+alert("Invalid date of birth");
+return false;
+}
+e++;
+}
+var s1=dateOfBirth.indexOf("/");
+if(s1==-1)
+{
+alert("Invalid date of birth")
+return false;
+}
+var s2=dateOfBirth.indexOf("/",s1+1);
+if(s2==-1)
+{
+alert("Invalid date of birth");
+return false;
+}
+if(s1==0||s2>=dateOfBirth.length-4||s2-1==s1)
+{
+alert("Invalid date of birth");
+return false;
+}
+var dayPart=dateOfBirth.substring(0,s1);
+var monthPart=dateOfBirth.substring(s1+1,s2);
+var yearPart=dateOfBirth.substring(s2+1);
+var dd=parseInt(dayPart);
+var mm=parseInt(monthPart);
+var yy=parseInt(yearPart);
+if(yy<1950||yy>=3000)
+{
+alert("Invalid date of birth");
+return false;
+}
+if(mm<1||mm>12)
+{
+alert("Invalid date of birth");
+return false;
+}
+var mdays=[31,28,31,30,31,30,31,31,30,31,30,31];
+//note,you should have think about one more condition
+//related to leap year
+if(yy%4==0) mdays[1]=29;
+if(dd<1||dd>mdays[mm-1])
+{
+alert("Invalid date of birth");
+return false;
+}
+
+//basic salary validation 
+e=0;
+while(e<basicSalary.length)
+{
+if(digits.indexOf(basicSalary.charAt(e))==-1)
+{
+alert("Basic salary should be an integer value");
+return false;
+}
+e++;
+}
+
+
+
+
+return true;
+}   
+
+
+</script>
+<style>
+
+
+</style>
+</head>
+<body>
+<h1>Example 120</h1>
+<h2>Form validation (Using very very old Style)</h2>
+<!--submitting form data with get type request is not good idea-->
+<form method='get' action='addEmployee' onSubmit='return validateForm(this)'>
+Employee Id : <input type='text' id='employeeId' name='employeeId'><br/>
+First name : <input type='text' id='firstName' name='firstName'><br/>
+Last name : <input type='text' id='lastName' name='lastName'><br/>
+Gender :&nbsp;&nbsp;&nbsp;&nbsp;
+Male <input type='radio' value='M' id='male' name='gender' checked>
+Female <input type='radio' value='F' id='female' name='gender'><br/>
+Date of birth (dd/mm/yyyy) : <input type='text' id='dateOfBirth' name='dateOfBirth'><br/>
+Is Indian : <input type='checkbox' id='isIndian' name='isIndian' value='Y'><br/>
+Basic salary :
+<input type='text' id='basicSalary' name='basicSalary'><br/><br/>
+
+
+<button type='submit'>Add</button>
+</form>
+<br/>
+<br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

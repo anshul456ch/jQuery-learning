@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+$(()=>{
+
+$("#per").controlgroup();
+
+$("#pi").controlgroup({
+"direction":"vertical"
+});
+
+});
+</script>
+</head>
+<body>
+<h1>Example 93</h1>
+<br/><br/><br/>
+
+<fieldset>
+<legend>Personal Information</legend>
+
+<div id='per'>
+<input type='text' id='name' placeholder='Name'>
+
+<select id='city'>
+<option value=-1>&lt;Select City&gt;</option>
+<option value=101>Ujjain</option>
+<option value=102>Indore</option>
+<option value=103>Dewas</option>
+</select>
+
+<label for='male'>Male</label>
+<input type='radio' id='male' name='gender'>
+<label for='female'>Female</label>
+<input type='radio' id='female' name='gender'>
+
+</div>
+</fieldset>
+
+<br/><br/><br/>
+<fieldset>
+<legend>Personal Information</legend>
+
+<div id='pi'>
+<input type='text' id='name' placeholder='Name'>
+
+<select id='city'>
+<option value=-1>&lt;Select City&gt;</option>
+<option value=101>Ujjain</option>
+<option value=102>Indore</option>
+<option value=103>Dewas</option>
+</select>
+
+<label for='m'>Male</label>
+<input type='radio' id='m' name='g'>
+<label for='f'>Female</label>
+<input type='radio' id='f' name='g'>
+
+</div>
+</fieldset>
+
+<br/><br/><br/>
+<br/><br/><br/>
+<a href='/' id='homeButton'>Home</a>
+</body>
+</html>

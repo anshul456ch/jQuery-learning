@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+
+</style>
+<script>
+$(()=>{
+$("#button1").click(()=>{alert('Button Clicked');});
+$("#text1").change(()=>{alert("Text  1 changed");});
+$("#text1").focus(()=>{$("#noticeBoard1").html("Text 1 Got Focus");});
+$("#text2").focus(()=>{$("#noticeBoard1").html("Text 2 Got Focus");});
+$("#text1").blur(()=>{$("#noticeBoard2").html("Text 1 lost Focus");});
+$("#text2").blur(()=>{$("#noticeBoard2").html("Text 2 lost Focus");});
+$("#city").on('change',()=>{alert("City Changed");});
+
+});
+</script>
+</head>
+<body>
+<h1>Example 34</h1>
+Button 1 :&nbsp;&nbsp;<button type='button' id='button1'>Click me</button><br/><br/>
+Text 1 : &nbsp;&nbsp;<input type='text' id='text1'><br/><br/>
+Text 2 : &nbsp;&nbsp;<input type='text' id='text2'><br/><br/>
+<div id='noticeBoard1'></div>
+<br/><br/>
+<div id='noticeBoard2'></div>
+<br/><br/>
+City : &nbsp;&nbsp;
+<select id='city'>
+<option value='1'>Pune</option>
+<option value='2'>Ujjain</option>
+<option value='3'>Bhopal</option>
+<option value='4'>Indore</option>
+<option value='5'>Mumbai</option>
+</select>
+<br/>
+<br/>
+<a href='/'>HOME</a>
+</body>
+</html>

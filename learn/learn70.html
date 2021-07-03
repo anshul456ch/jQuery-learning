@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<style>
+.xyz
+{
+height:40px;
+overflow:hidden;
+}
+</style>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script>
+$(()=>{
+var ih=$(".xyz").css("height");
+$(".xyz").css("height","auto");
+var ah=$(".xyz").css("height");
+$(".xyz").css("height",ih);
+
+$("#abcd").click((ev)=>{
+ev.preventDefault();
+
+if($("#ddd").css("height")==ih)
+{
+$("#ddd").animate({"height":ah},500,"swing",()=>{
+$(ev.target).html("show less");
+});
+}
+else
+{
+$("#ddd").animate({"height":ih},500,"swing",()=>{
+$(ev.target).html("show more");
+});
+}
+});
+});
+</script>
+</head>
+<body>
+<h1>Example 70</h1>
+<div class='xyz' id='ddd'>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+Ujjain is the city of Gods<br/>
+I Live in Ujjain<br/>
+Ujjain is cool place<br/>
+</div>
+<a href=' ' id='abcd'>show more</a>
+<br/>
+<br/>
+<div class='xyz'>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+Good Bad ugly<br/>
+Cool Fool <br/>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<a href='/'>HOME</a>
+</body>
+</html>

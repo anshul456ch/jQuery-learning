@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+$(()=>{
+$("#thinkingmachines").hide();
+});
+const onOpen=()=>{
+$("#notice").html("Opened");
+}
+const onClose=()=>{
+$("#notice").html("Closed");
+}
+const onBeforeClose=()=>{
+$("#notice").html("About to close");
+}
+const onStartDrag=()=>{
+$("#notice").html("Dragging started");
+}
+const onStopDrag=()=>{
+$("#notice").html("Dragging stopped");
+}
+const doSomething=()=>{
+$("#thinkingmachines").dialog({
+"title":"Notification",
+"open":onOpen,
+"close":onClose,
+"beforeClose":onBeforeClose,
+"dragStart":onStartDrag,
+"dragStop":onStopDrag,
+"show":{effect:"fadeIn",duration:200}, 
+"hide":{effect:"fadeOut",duration:4000}  
+});
+}
+</script>
+</head>
+<body>
+<h1>Example 103</h1>
+<div id='notice' style='color:red;font-size:24pt'></div>
+<div id='thinkingmachines'>
+<h1>Thinking Machines</h1>
+<h3>Think Big</h3>
+<h5>We Teach More Than We Promise To Teach</h5>
+</div>
+
+<br/><br/>
+<button type='button' onClick='doSomething()'>Click me</button>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

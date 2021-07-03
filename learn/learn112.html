@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+$(()=>{
+$("#subjects").disableSelection();
+$("#subjects").sortable({
+connectWith:".list",  //or dropOnEmpty
+dropOnEmpty:true,
+remove:function(ev,ui)
+{
+alert("Subjects (removed) :"+ui.item.prop("id"));
+} ,
+recieve:function(ev,ui)
+{
+alert("Subjects (recieved) :"+ui.item.prop("id"));
+}
+});
+$("#selectedSubjects").disableSelection();
+$("#selectedSubjects").sortable({
+connectWith:".list",  //or dropOnEmpty
+dropOnEmpty:true,
+remove:function(ev,ui)
+{
+alert("Selected subjects (removed) :"+ui.item.prop("id"));
+} ,
+recieve:function(ev,ui)
+{
+alert("Selected subjects (recieved) :"+ui.item.prop("id"));
+}
+});
+});
+</script>
+<style>
+.list
+{
+border:1px solid gray;
+padding:10px;
+width:150px;
+}
+.list li
+{
+padding:4px;
+list-style:none;
+cursor:pointer;
+}
+.list li:hover
+{
+color:white;
+background-color:orange;
+}
+</style>
+</head>
+<body>
+<h1>Example 112</h1><br/><br/>
+<h3>Subjects</h3>
+<ul id='subjects' class='list'>
+<li id='1'>Physics</li>
+<li id='2'>Chemistry</li>
+<li id='3'>Maths</li>
+<li id='4'>English</li>
+<li id='5'>Hindi</li>
+</ul>
+<br/><br/><br/>
+<h3>Selected Subjects</h3>
+<ul id='selectedSubjects' class='list'>
+</ul>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

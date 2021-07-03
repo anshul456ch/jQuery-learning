@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+$(()=>{
+$("#players").disableSelection();
+$("#players").sortable({
+connectWith:"#team1,#team2",  //or dropOnEmpty
+dropOnEmpty:true
+});
+$("#team1").disableSelection();
+$("#team1").sortable({
+connectWith:"#players,#team2",  //or dropOnEmpty
+dropOnEmpty:true
+});
+$("#team2").disableSelection();
+$("#team2").sortable({
+connectWith:"#players,#team1",  //or dropOnEmpty
+dropOnEmpty:true
+});
+});
+</script>
+<style>
+.list
+{
+border:1px solid gray;
+padding:10px;
+width:150px;
+}
+.list li
+{
+padding:4px;
+list-style:none;
+cursor:pointer;
+}
+.list li:hover
+{
+color:white;
+background-color:orange;
+}
+</style>
+</head>
+<body>
+<h1>Example 113</h1><br/><br/>
+<h3>Players</h3>
+<ul id='players' class='list'>
+<li id='1'>Ronaldo</li>
+<li id='2'>Messi</li>
+<li id='3'>Neymar</li>
+<li id='4'>Kohli</li>
+<li id='5'>Gayle</li>
+</ul>
+<br/><br/><br/>
+<h3>Team A</h3>
+<ul id='team1' class='list'>
+</ul>
+<br/>
+<h3>Team B</h3>
+<ul id='team2' class='list'>
+</ul>
+<br/>
+<br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

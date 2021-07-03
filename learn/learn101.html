@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+$(()=>{
+$("#thinkingmachines").hide();
+});
+const doSomething=()=>{
+$("#thinkingmachines").dialog({
+"title":"Computer Programming",
+buttons:[{
+"text":"Ok",
+"icon":  "ui-icon-circle-close",         //refer this link for jquery icons : https://api.jqueryui.com/theming/icons/
+"click":function(){
+$(this).dialog("close");
+}	
+},{
+"text":"Cancel",
+"icon":  "ui-icon-circle-check",         //refer this link for jquery icons : https://api.jqueryui.com/theming/icons/
+"click":function(){
+alert('Just Cancelling');
+$(this).dialog("close");
+}	
+}]
+});
+}
+</script>
+</head>
+<body>
+<h1>Example 101</h1>
+<div id='thinkingmachines'>
+<h1>Thinking Machines</h1>
+<h3>Think Big</h3>
+<h5>We Teach More Than We Promise To Teach</h5>
+</div>
+<br/><br/>
+<button type='button' onClick='doSomething()'>Click me</button>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

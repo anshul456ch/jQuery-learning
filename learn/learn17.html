@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+table{
+border : 1px solid black;
+border-collapse:collapse;
+}
+table td,th{
+border : 1px solid black;
+padding:10px;
+}
+.xyz{
+color :white;
+background-color:orange;
+}
+</style>
+<script>
+
+
+/*
+We use jQuery to loop through each table rows to check if there are any text values that matches the value of the input field. The toggle() method hides the row (display:none) that does not match the search. We use the toLowerCase() DOM method to convert the text to lower case, which makes the search case insensitive (allows "anshul", "Anshul", and even "ANSHUL" on search).
+
+*/
+$(()=>{
+  $("#searchBox").on("keyup", function() {
+var searchWhat=$(this).val().toLowerCase();
+    $("#placementView>tbody>tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(searchWhat) > -1)
+    });
+  });
+});
+
+
+
+</script>
+</head>
+<body>
+<h1>Example 17</h1><br/><br/><br/><br/>
+Search :&nbsp;&nbsp;<input type='text' id='searchBox'><br/><br/>
+<table id='placementView'>
+<thead>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Branch</th>
+<th>CGPA </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Anshul</td>
+<td>Nagar</td>
+<td>Information technology</td>
+<td><b>7.8</b></td>
+</tr>
+<tr>
+<td>Shivam</td>
+<td>Soni</td>
+<td>Computer Science</td>
+<td><b>9.8</b></td>
+</tr>
+<tr>
+<td>Jayesh</td>
+<td>Sharma</td>
+<td>Chemical</td>
+<td><b>5.8</b></td>
+</tr>
+<tr>
+<td>Swapnil </td>
+<td>Vyas</td>
+<td>BCA</td>
+<td><b>5.5</b></td>
+</tr>
+
+
+<tr>
+<td>Dev </td>
+<td>Rathore</td>
+<td>Information technology</td>
+<td><b>4.9</b></td>
+</tr>
+<tr>
+<td>Yash</td>
+<td>Soni</td>
+<td>Electrical</td>
+<td><b>4.8</b></td>
+</tr>
+<tr>
+<td>Aditya</td>
+<td>Sharma</td>
+<td>Mechanical</td>
+<td><b>7.5</b></td>
+</tr>
+<tr>
+<td>Vinay</td>
+<td>Vyas</td>
+<td>MCA</td>
+<td><b>7.3</b></td>
+</tr>
+<tr>
+<td>Harshit</td>
+<td>Dhawan</td>
+<td>Civil</td>
+<td><b>6.2</b></td>
+</tr>
+
+</tbody>
+</table>
+<br/><br/><br/>
+
+
+<a href='/'>HOME</a>
+</body>
+</html>

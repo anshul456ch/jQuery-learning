@@ -1,0 +1,53 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 8 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<style>
+.xyz{
+color:red;
+}
+.pqr{
+color:blue;
+}
+</style>
+<script>
+function one()
+{
+$(":input").addClass("xyz");//Selects all input, textarea, select and button elements.
+}
+function two()
+{
+$(":button").addClass("pqr");//Selects all button elements and elements of type button.
+}
+$("input:enabled");//Selects all elements that are enabled.
+$("input:disabled");//Selects all elements that are disabled.
+$(":checked").addClass("xyz");
+//try for :input :button :enabled :disabled :checked :selected
+</script>
+</head>
+<body>
+<h1>Example 8</h1><br/>
+<form>
+Name<input type='text'><br/>
+City<input type='text'><br/>
+</form>
+<button type='button' onclick='one()'>Click Me 1</button><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<button type='button' onclick='two()'>Click Me 2</button><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+disabled<input type='text' disabled='disabled'>
+enabled<input type='text'><br/>
+disabled<input type='text' disabled='disabled'>
+enabled<input type='text'><br/>
+
+<form>
+ <input type="checkbox" >
+    <input type="checkbox" >
+    <input type="checkbox" >
+    <input type="checkbox" >
+    <input type="checkbox" >
+</form>
+<a href='/'>HOME</a>
+</body>
+</html>

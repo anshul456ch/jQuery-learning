@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery UI</title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+var firstNames=["Anshul","Dev","Deepak","Akshat","Swapnil","Shivam","Akshay","Yash","Jayesh","Harshit","Rashid","Bhavishaya"];
+var lastNames=["Nagar","Rathore","Sen","Bafna","Vyas","Soni","Jain","Jaiswar","Sharma","Dhawan","Ali","Joshi"];
+ $(()=>{
+$("#firstName").autocomplete({
+source:firstNames
+});
+$("#lastName").autocomplete({
+source:(data,giveBackThrough)=>{
+var lst=[];
+var i=0;
+while(i<lastNames.length)
+{
+if(lastNames[i].toLowerCase().startsWith(data.term.toLowerCase()))
+{
+lst.push(lastNames[i]);
+}
+i++;
+}
+giveBackThrough(lst);
+}
+});
+});
+</script>
+</head>
+<body>
+<h1>Example 86</h1>
+First name : &nbsp;&nbsp;<input type='text' id='firstName'><br/><br/>
+Last name :&nbsp;&nbsp; <input type='text' id='lastName'><br/><br/>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

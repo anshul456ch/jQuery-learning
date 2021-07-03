@@ -1,0 +1,86 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<style>
+#cos td,th{
+border:1px solid black;
+padding:4px;
+}
+#cos {
+border-collapse:collapse;
+font-size:24pt;
+cursor:pointer;
+}
+.xyz{
+background-color:black;
+color:white;
+}
+</style>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script>
+$(()=>{
+$("#selectAll").click(function(ev){
+$("#cos>tbody>tr").removeClass("xyz");
+$("#cos>tbody>tr").find(".cb").prop("checked",false);
+var isChecked=$(this).prop("checked");
+if(isChecked)
+{
+$("#cos>tbody>tr").trigger("click");
+}
+});
+
+$("#cos>tbody>tr").click(function(ev){
+$(ev.currentTarget).toggleClass("xyz");
+var cb=$(ev.currentTarget).find(".cb");
+if(!$(ev.target).is(".cb"))  cb.prop("checked",!cb.prop("checked"));
+if(cb.prop("checked")==false) $("#selectAll").prop("checked",false);
+});
+
+});
+</script>
+</head>
+<body>
+<h1>Example 46</h1>
+<table id='cos'>
+<thead>
+<tr>
+<th>S.No</th>
+<th>Company</th>
+<th><input id='selectAll' class='cb' type='checkbox'></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>Facebook</td>
+<td><input  class='cb' type='checkbox'></td>
+</tr>
+<tr>
+<td>2.</td>
+<td>Amazon</td>
+<td><input  class='cb' type='checkbox'></td>
+</tr>
+<tr>
+<td>3.</td>
+<td>Apple</td>
+<td><input  class='cb' type='checkbox'></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>Netflix</td>
+<td><input  class='cb' type='checkbox'></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>Google</td>
+<td><input  class='cb' type='checkbox'></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<a href='/'>HOME</a>
+</body>
+</html>

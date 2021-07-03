@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery UI</title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+//iss accordian function ko call krte samay ham json pass kr skte hai
+$(()=>{
+$("#technologies").accordion({
+active:0,
+collapsible:true,
+header:"h4",
+activate:doSomething
+});
+});
+
+const doSomething=(ev,ui)=>{
+alert($(ui.oldHeader).html());
+alert($(ui.oldpanel).html());
+alert($(ui.newHeader).html());
+alert($(ui.newPanel).html());
+}
+</script>
+</head>
+<body>
+<h1>Example 85</h1>
+<div id='technologies'>
+<h4>C programming</h4>
+<div>C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system. By design, C provides constructs that map efficiently to typical machine instructions.
+</div>
+<h4>C++</h4>
+<div>C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes".
+</div>
+<h4>Java</h4>
+<div>
+Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.
+</div>
+<h4>Python</h4>
+<div>
+Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation.
+</div>
+<h4>JavaScript</h4>
+<div>
+JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
+</div>
+
+</div>
+<br/><br/><br/>
+<a href='/'>Home</a>
+</body>
+</html>

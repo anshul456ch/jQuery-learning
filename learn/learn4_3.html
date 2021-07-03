@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+
+<script>
+
+function doSomething()
+{
+
+//Selects all elements with the p tag name  and traverse content of p tag
+//i : returns index 
+//c: returns content
+$("p").each((i,c)=>{
+alert(i+","+c.innerHTML); //The innerHTML property sets or returns the HTML content (inner HTML) of an element.
+});
+}
+</script>
+</head>
+<body>
+<h1>Example 4</h1><br/>
+<p>Thinking Machines</p><br/>
+<p>Ujjain is the city of Gods</p><br/>
+<p>We teach more than we promise</p><br/>
+<button type='button' onclick='doSomething()'>Click Me</button><br/>
+<a href='learn4.html'>Learn 4</a>
+</body>
+</html>

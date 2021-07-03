@@ -1,0 +1,29 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Learn 1 </title>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script>
+function doIt()
+{
+alert($("[type]").html());//Selects elements that have the specified attribute, with any value.
+alert($("[type='institute']").html());//Matches elements that match all of the specified attribute filters.
+alert($("p[type]").html());
+alert($("div[entity!='city']").html());//Select elements that either don't have the specified attribute, or do have the specified attribute but not with a certain value.
+}
+</script>
+</head>
+<body>
+<h1>Example 7</h1><br/>
+<div type='school'>Loti School</div>
+<p type='institute'>Thinking Machines</p>
+<div slogan='first'>We teach more than we promise</div>
+<span slogan='second'>Think Big</span>
+<div entity='city'>Ujjain</div>
+<div entity='country'>India</div>
+<button type='button' onclick='doIt()'>Click Me</button><br/><br/>
+<a href='/'>HOME</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>JQuery Examples</title>
+<style>
+.homeLink
+{
+position:absolute;
+top:5px;
+right:10px;
+}
+#abcd
+{
+border:1px solid black;
+position:absolute;
+top:100px;
+padding:10px;
+}
+</style>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script>
+function moveMe()
+{
+$("#abcd").animate({left:"800px"},{duration:"slow",queue:false}).animate({top:"500px"},{duration:"slow",queue:false});
+}
+</script>
+</head>
+<body>
+<h1>Example 75</h1>
+<div id='abcd'>
+<h3>Thinking Machines</h3>
+<h5>Think Big</h5>
+<button type='button' onClick='moveMe()'>Move Me</button>
+</div>
+<a class='homeLink' href='/'>HOME</a>
+</body>
+</html>

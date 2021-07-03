@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Jquery </title>
+<link rel='stylesheet' href='jquery-ui-1.12.1/jquery-ui.css'>
+<script src='jquery/jquery-3.6.0.min.js'></script>
+<script src='jquery-ui-1.12.1/jquery-ui.js'></script>
+<script>
+$(()=>{
+
+$("#emailId").tooltip();
+
+$("#email").tooltip({
+show:{effect:"blind",duration:200}
+});
+
+$("#country").tooltip({
+show:{effect:"drop",direction:"down"} // right,left as per same
+});
+
+$("#age").spinner({
+"min":18,
+"max":45,
+});
+
+$("#a").spinner({
+"min":18,
+"max":45,
+"step":2
+});
+
+});
+</script>
+</head>
+<body>
+<h1>Example 94</h1>
+<br/><br/><br/>
+
+<label for='emailId'>Email Id. :</label>
+<input type='text' id='emailId' title="Email Id. will act as username">
+<br/><br/><br/>
+
+<label for='email'>Email :</label>
+<input type='text' id='email' title="Email  will act as username">
+<br/><br/><br/>
+
+<label for='country'>Country :</label>
+<select id='country' title="Language will be chosen as per your country">
+<option value=-1>&lt;Select Country&gt;</option>
+<option value='India'>India</option>
+<option value='Germany'>Germany</option>
+</select>
+<br/><br/><br/>
+<label for='age'>Age</label>
+<input type='text' id='age' value='21'>
+<br/><br/><br/>
+<label for='a'>Age</label>
+<input type='text' id='a' value='21'>
+<br/><br/><br/>
+<br/><br/><br/>
+<a href='/' id='homeButton'>Home</a>
+</body>
+</html>
